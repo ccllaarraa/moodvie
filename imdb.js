@@ -1,50 +1,59 @@
-//Bring in imdb module
-imdb = require('imdb-api');
+/* ------- READING JSON DATA --------- */
 
-//API KEY;
+//1.Import JSON Models & DATA
+const getJson = require('./json-file-reader');
+const filename = './movies.json';
+
+//Bring in IMDB module
+const imdb = require('imdb-api');
+
+//API KEY for IMDB;
 const key = 'b3dac628';
 
-//Holder for matches
+//Movielist array
 let movies = [];
 
-//GET MOVIE ON IMDB BY ID
-// imdb.get({ id: 'tt0090190' }, { apiKey: 'b3dac628' }).then(console.log);
-
-//Get user input from command line
-const userQuery = process.argv[2];
-
-//search database based on name (string only)
-imdb.search({
-  name: `The Godfather`
-}, {
-    apiKey: key
-  })
-  .then((data) => {
-    //Loop through potential matches
-    data.results.forEach(movie => {
-      
-     //get full movie objects with id
-     imdb.get({ id: movie.imdbid }, { apiKey: key })
+//Read movie json data
+getJson.passJSON(filename, function(data){
+  
+  //loop through 150 top films according to IMDB
+  for (let i = 0; i <=149; i++) {
+    //console.log(data[i].title); title
+     imdb.get({ name: data[i].title }, { apiKey: key, timeout: 30000 })
      .then((movieObj) => {
-       //push full movie objects into global array
-      movies.push(movieObj);
+       //Push all movies to db
+       movies.push(movieObj);
      })
-     .catch((err) => {
-     })
-    });
-  })
-  .catch(console.log); //error
+     .catch(console.log); //error
+  }
+})
 
-//Method to show results
-const resultsMovie = function(){
+//Show results
+const resultsMovie = function () {
 
-//wait to return result of matches
+  //wait to return result of matches
   setTimeout(() => {
-    console.log(movies[0]);
-  }, 1000);
+    console.log(movies.length);
+  }, 2000);
 }
 
-resultsMovie();
+resultsMovie()
+
+/* --------- CUSTOM IMDB METHODS --------- */
+
+const getMovieByTitle = function(title){
+  imdb.get({ name: title }, { apiKey: key, timeout: 30000 })
+    .then((movie) => {
+      console.log(movie);
+    })
+    .catch(console.log);
+}
+
+
+  
+
+
+
 
 
 
