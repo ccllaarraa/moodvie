@@ -8,7 +8,7 @@ const filename = './movies.json';
 const imdb = require('imdb-api');
 
 //API KEY for IMDB;
-const key = 'b3dac628';
+const key = '';
 
 //Movielist array
 let movies = [];
