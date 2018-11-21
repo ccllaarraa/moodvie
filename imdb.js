@@ -33,20 +33,26 @@ const resultsMovie = function () {
 
   //wait to return result of matches
   setTimeout(() => {
+    //Log out movie database
     console.log(movies.length);
-  }, 2000);
+
+    //search movie titles
+    //getMovieByTitle('The Shawshank Redemption')
+    
+  }, 2500);
 }
 
 resultsMovie()
 
 /* --------- CUSTOM IMDB METHODS --------- */
-
 const getMovieByTitle = function(title){
-  imdb.get({ name: title }, { apiKey: key, timeout: 30000 })
-    .then((movie) => {
-      console.log(movie);
-    })
-    .catch(console.log);
+  let matches = [];
+  movies.forEach((movie) => {
+    if(movie.title.toLowerCase().includes(title.toLowerCase())){
+      matches.push(movie);
+      console.log(matches);
+    }
+  })
 }
 
 
