@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+         Moodvie
+        </title>
+    </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <body>
+           
+
+            <div class="first"><button type="button" onclick="smoothScroll(document.getElementById('second'))">Click Me!</button></div>
+            <div class="second" id="second">Hi</div>
+
+
+
+            <!-- landingpage -->
+            <!-- strong typeface for logo -->
+
+            <!-- very minimal landingpage -->
+            <!-- finding it hard to find a movie? -->
+            <div class="container">
+                    <div class="landingpage">
+                    
+                    </div>
+            </div>   
+
+            <!-- First content div (City Selection) -->
+            <!-- Searchbar -->
+
+
+            <div class="container">
+                <div class="city">
+                </div>
+            </div>   
+
+            <!-- Second content div (Colour) colour change -->
+            <div class="container">
+                <div class="colour"> 
+                </div>
+            </div> 
+            <!-- pick between 6-9 colours, uses classes to link, full screen like coolers.com-->
+
+
+
+           <!-- Third content div (Rorshach) -->
+
+
+        <div class="container">
+                <div class="rorschach">
+                    <!-- static images that pulse using javascript, select each one  -->
+                    
+                </div>
+            </div> 
+
+
+
+          <!-- Fourth content div (Shapes) -->
+
+        <div class="container">
+                <div class="shapes" > 
+                </div>
+        </div> 
+     </body>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+<script> 
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+    
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+    
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+
+        
+</script>
+ </html>
+ <footer>
+
+    <!-- basic - links and signature -->
+</footer>

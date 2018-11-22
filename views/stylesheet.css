@@ -1,0 +1,29 @@
+.body{
+    background: colour
+}
+
+/* .navigation{
+
+}
+
+.container{
+     */
+
+
+
+.landingpage{
+    display: flex;
+
+}
+
+.first {
+  width: 100%;
+  height: 1000px;
+  background: #ccc;
+}
+
+.second {
+  width: 100%;
+  height: 1000px;
+  background: #999;
+}
