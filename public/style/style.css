@@ -1,0 +1,95 @@
+.fadingEffect {
+  animation: tutsFade 5s ;
+}
+
+@keyframes tutsFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* The animation code */
+
+body {
+    text-align: center;
+    padding: 100px 0 0 0;
+    color: #fff;
+    background: white;
+}
+
+
+#rotating {
+      animation: rotation 5s infinite linear;
+      /*animation-direction: alternate; */
+
+}
+
+@keyframes rotation {
+    from  {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+
+
+}
+
+
+.circle {
+    position: relative;
+    transition: all 0.2s;
+    animation: show 2s infinite;
+    
+}
+
+@keyframes show {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+}
+
+#dot1 {
+  height: 250px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s;
+  animation: show 15s infinite;
+    
+}
+
+#dot2 {
+  height: 250px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s;
+  animation: show 7s infinite;
+    
+}
+
+#dot3 {
+  height: 250px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s;
+  animation: show 5s infinite;
+    
+}
+
+
+
+
