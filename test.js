@@ -8,7 +8,8 @@
 const request = require('request');
 const weatherFunctions = require('./weather.js')
 const colorFunctions = require('./color.js')
-
+const rorschachFunctions = require('./rorschach.js')
+const shapeFunctions = require('./shape.js')
 // app.get('/', (req, res) => {
 //     res.render('index')
 // })
@@ -16,50 +17,27 @@ const colorFunctions = require('./color.js')
 // app.get('/result', (req, res) => {
 
 //--- WEATHER ---//
-request('https://api.darksky.net/forecast/dd99484e9987befc5af779e47abe4908/47.5615,-52.7126?units=si', { 
+request('https://api.darksky.net/forecast/dd99484e9987befc5af779e47abe4908/52.3680,4.9036?units=si', { 
     json: true }, (err, respond, body) => {
-        const icon = `${body.currently.icon};` 
+        const icon = `${body.currently.icon}` 
         const humidity = `${body.currently.humidity}` 
         const temperature = `${body.currently.temperature}`
       
         let weatherResult = weatherFunctions.weather(icon, humidity, temperature);
-        console.log(weatherResult);
-        console.log(body.timezone)
-        console.log(body.currently.icon)
-        console.log(body.currently.temperature)
-        console.log(body.currently.humidity)
     });
 
 // //--- COLOR ---//
 let colorResult = colorFunctions.color()
 console.log(colorResult)
 
-
 // //--- RORSCHACH ---//
-// function shapechoice () {
-//     let shapeInput = req.body.shape 
-
-//     if(shapeInput == 'img1') {
-//         return 0
-//     } else if(shapeInput == 'img2') {
-//         return 1
-//     } else {
-//         return 2
-//     }
-// }
+let rorschachResult = rorschachFunctions.rorschach()
+console.log(rorschachResult)
 
 // //--- SHAPE? ---//
-// function soundchoice () {
-//     let soundInput = req.body.sound 
+let shapeResult = shapeFunctions.shape()
+console.log(shapeResult)
 
-//     if(soundInput == 'snd1') {
-//         return 0
-//     } else if(soundInput == 'snd2') {
-//         return 1
-//     } else {
-//         return 2
-//     }
-// }
 // //--- RESULT ---//
 function result () {
     math.mean(weatherFunctions, colorFunctions, rorschachFunctions, shapeFunctions)
@@ -82,6 +60,8 @@ function result () {
 // //---FORM---//
 // //based on input, will give a number. 
 
-// //--- git ---//
-// //when jonathan have pushed his changes into master. first commit in your branch. go to branch master, git pull, to get jons new files. then switch to your branch - git merge master, to merge the changes  
+//--- GIT ---//
+//when jonathan have pushed his changes into master. first commit in your branch.
+// go to branch master, git pull, to get jons new files. then switch to your branch 
+//- git merge master, to merge the changes  
 
