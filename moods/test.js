@@ -15,16 +15,16 @@ const shapeFunctions = require('./shape.js')
 // })
 
 // app.get('/result', (req, res) => {
-
+let weatherResult = weatherFunctions.weather()
 //--- WEATHER ---//
 request('https://api.darksky.net/forecast/dd99484e9987befc5af779e47abe4908/52.3680,4.9036?units=si', { 
     json: true }, (err, respond, body) => {
         const icon = `${body.currently.icon}` 
         const humidity = `${body.currently.humidity}` 
         const temperature = `${body.currently.temperature}`
-      
-        let weatherResult = weatherFunctions.weather(icon, humidity, temperature);
+        weatherResult = weatherFunctions.weather(icon, humidity, temperature);
     });
+console.log(weatherResult)
 
 // //--- COLOR ---//
 let colorResult = colorFunctions.color()
@@ -39,16 +39,27 @@ let shapeResult = shapeFunctions.shape()
 console.log(shapeResult)
 
 // //--- RESULT ---//
-function result () {
-    math.mean(weatherFunctions, colorFunctions, rorschachFunctions, shapeFunctions)
-   // math.median(weather, soundchoice, shapechoice, colorchoice)
+
+let result = [weatherResult, colorResult, rorschachResult, shapeResult] // variable containing an array of integers
+
+function getSum(x, y) { // function created in order to being able to calculate the sum of all integers
+        return x + y;
+      }
+let sum = (result.reduce(getSum)) // .reduce (method found on w3school) will reduce all nrs into one value taking in the function 'getSum' as the calculator
+
+function average(x){ // FEEDBACK - NO NEED TO DO A FOOR LOOP IN THIS CASE
+    return Math.floor(sum/x.length) // returns the value of getSum function divided by the nrs of integers
+}
+console.log(average(result)) // runs the average function. Result -> 4.4
+
+
+// math.median(weather, soundchoice, shapechoice, colorchoice)
 //    mean: 
 // math.floor() //rounds up the number
 // cons: rounds up to 1 if tis 0.5
 
 // median
 // cons: in case your result is 2*2 and 2*1 you will get all movies from the two categories.
-}
 // res.render('result', {
     
 //     movie: result

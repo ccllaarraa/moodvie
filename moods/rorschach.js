@@ -1,5 +1,5 @@
 exports.rorschach = function () {
-    let rorschachInput = req.body.rorschach 
+    let rorschachInput = process.argv[3]  
 
     if(rorschachInput == 'img1') {
         return 0

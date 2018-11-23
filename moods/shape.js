@@ -1,5 +1,5 @@
 exports.shape = function () {
-    let shapeInput = req.body.shape 
+    let shapeInput = process.argv[4] 
 
     if(shapeInput == 'shp1') {
         return 0
