@@ -10,7 +10,7 @@ else if(icon ==  'cloudy' || icon == 'partly-cloudy-day' || icon == 'partly-clou
     return 1
 }
     //wet = neutral
-else if(icon == "rain" || icon == 'sleet' || icon == 'wind' || icon == 'fog'){ 
+else if(icon == 'rain' || icon == 'sleet' || icon == 'wind' || icon == 'fog'){ 
     return 2
 }
     //whats not in there: less than 10 degrees & snow icon -- return sad
