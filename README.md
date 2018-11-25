@@ -56,42 +56,13 @@ Movie {
   ```
 
 ### Methods ###
-* getMovieByTitle() - Logs out matching movie objects. Only returns the first match.
+* searchMovieByTitle() - Returns array with movie objects that match title.
   * title( string )
-  * db ( array)
+
 
 ```javascript
-getMovieByTitle(title, db);
+getMovieByTitle(title);
 ```
----
-
-* sortMovieDB() - Sorts the movie database into their emotion catorgories.
-  * db ( array )
-```javascript
-sortMovieDB(db);
-```
----
-* getGenre() - Loops through the movie objects genre string and places each value into a new array. You can use the index(itemNumber) of the new array to get the genre in that position.
-  * genres( array )
-  * itemnumber( int )
-```javascript
-getGenre(genres, 0);
-```
----
-* createMovieObj() - Creates a custom object using the values of the movie object passed in.
-  * movie( object)
-  ```javascript
-  createMovieObj(movie)
-  ```
-  ---
-
-* sortGenrePushMovies() - Sorts the movie object into the right catorgory based on the genre
-    * genre( string )
-    * movie( object )
-
-    ```javascript
-    sortGenrePushMovies(firstGenre, movie);
-    ```
 ---
 
 
