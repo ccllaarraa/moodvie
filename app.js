@@ -31,8 +31,12 @@ app.post('/', (req, res) => {
   const emotion = req.body.emotion;
   // console.log(emotion);
   const response = movies.database.randomMovie(emotion);
-  res.send(response);
-  //res.redirect(response);
+  //res.send({ movies: response});
+  res.render('results', {movies: response});
 })
+
+app.get('/results', (req, res) => {
+  res.render('results');
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

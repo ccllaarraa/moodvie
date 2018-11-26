@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Moodvie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="results.css" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<!-- <% if (movies) { %>
+<img src="<%= movies.poster %>" alt="">
+<h1><%= movies.title %></h1>
+<% } %> -->
+  <div class="row">
+    <div class="box">
+      <div class="image">
+        <span><img src="<%= movies.poster %>" alt=""></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="content">
+        <div>
+          <h3>
+            <%= movies.title %>
+          </h3>
+          <p>Year:
+            <%= movies.year %>
+          </p>
+          <p>IMDB Rating:
+            <%= movies.rating %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="movieInfo">
+      <h3>Plot.</h3>
+      <p ><%= movies.plot %></p>
+    </div>
+  </div>
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>document.body.className += ' fade-out';
+    $(function () {
+      $('body').removeClass('fade-out');
+    });
+  </script>
+</body>
+</html>
