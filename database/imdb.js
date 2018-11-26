@@ -39,6 +39,16 @@ const searchMovieByGenre = (genre) => {
   return matches;
 }
 
+const randomMovie = (emotion) =>{
+  if(emotion === '0'){
+    return  sad[Math.floor(Math.random() * sad.length)];
+  } else if( emotion === '1'){
+    return happy[Math.floor(Math.random() * happy.length)];
+  } else if ( emotion === '2'){
+    return neutral[Math.floor(Math.random() * neutral.length)];
+  }
+}
+
 //create a function that loops through movie database and sorts them out by genre and then places them in arrays matching the emotions
 //sad = 0 , happy = 1, neutral = 2
 
@@ -68,7 +78,7 @@ const getGenre = (genres, itemNumber) => {
 
 //sort movie genres and push to emotion arrays
 const sortGenrePushMovies = function (genre, movie) {
-  if (genre === 'Sci-Fi' || genre === 'Comedy' || genre === 'Adventure' || genre === 'Mystery') {
+  if (genre === 'Sci-Fi' || genre === 'Comedy' || genre === 'Adventure' || genre === 'Mystery' || genre === 'Animation') {
     //SAD
     sad.push(movie);
   } else if (genre === 'Action' || genre === 'Animation' || genre === 'Western' || genre === 'Short' || genre === 'Film-noir') {
@@ -90,7 +100,8 @@ exports.database = {
   neutral,
   showAllMovies,
   searchMovieByTitle,
-  searchMovieByGenre
+  searchMovieByGenre,
+  randomMovie
 }
 
 
