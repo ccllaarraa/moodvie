@@ -41,12 +41,11 @@ request('https://api.darksky.net/forecast/dd99484e9987befc5af779e47abe4908/52.36
         const icon = `${body.currently.icon}` 
         const humidity = `${body.currently.humidity}` 
         const temperature = `${body.currently.temperature}`
-        weatherResult = weatherFunctions.weather(icon, humidity, temperature);
-        console.log(icon)
+        let weatherResult = weatherFunctions.weather(icon, humidity, temperature);
+        console.log(weatherResult)
+        res.send({weatherResult: weatherResult})
       });
     }
-    console.log(weatherResult)
-    res.send({weatherResult: weatherResult})
 })
 
 /*---------------- COLOR -------------------*/
@@ -69,18 +68,16 @@ res.send({rorschachResult: rorschachResult})
 })
 
 /*------------ RESULT REQUEST ------------*/
-app.post('/movie', (req, res) => {
+app.post('/results', (req, res) => {
 let rorschachResult = rorschachFunctions.rorschach()
 let colorResult = colorFunctions.color();
 let weatherResult = weatherFunctions.weather()
 
 let result = [weatherResult, colorResult, rorschachResult] 
-
   function getSum(x, y) { 
         return x + y;
   }
 let sum = (result.reduce(getSum)) 
-
   function average(x){ 
     return Math.floor(sum/x.length) //math.ceil always rounds up 
   }
@@ -89,9 +86,27 @@ let total = Average.toString()
 console.log(total)
 const response = movies.database.randomMovie(total);
 console.log(response)
-res.send(response);
-  //res.redirect(response);
+let list = []
+let movie1 = movies.database.randomMovie(total);
+let movie2 = movies.database.randomMovie(total);
+list[0] = movie1;
+list[1] = movie2;
+
+res.render('results', {movies: list});
 })
+  //res.redirect(response);
+//
+// app.post('/', (req, res) => {
+//   // //const emotion = req.body.emotion;
+//   // const colorInput 
+//   // // console.log(emotion);
+
+ 
+// })
 /* WOULD BE NICE TO DO A WHEEL - SO WAITING 5 SECONDS.. 'WE ARE NOW GENERATING THE BEST MOVIE BASED ON YOUR CURRENT MOOD'*/
+
+app.get('/results', (req, res) => {
+  res.render('results');
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

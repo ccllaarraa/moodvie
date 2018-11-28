@@ -31,7 +31,7 @@
     <input type='image' src='blue.png' id='rorschach3' name='rorschach' value='2'>
 </div>
 <br>
-<form method='POST' action='/movie'>
+<form method='POST' action='/results'>
 <button id='movieSubmit' type=submit>Show Me My Movie</button>
 </form>
 
@@ -45,7 +45,6 @@ $('#citySubmit').click(function(){
       city: $('#city').val()
       }, 
       function(data) {
-        //console.log(data.weatherResult) 
     }
   )}) 
 
@@ -57,7 +56,7 @@ $('#citySubmit').click(function(){
       }, 
       function(data) {
       //console.log(data.colorResult) 
-      //console.log($('#color').val())
+      console.log($(this).val())
     }
   )}) 
   })
@@ -67,7 +66,7 @@ $('#citySubmit').click(function(){
       color: $(this).val(), 
       }, 
       function(data) {
-       // console.log(data.rorschackResult) 
+      console.log($(this).val()) 
     }
 )}) 
 

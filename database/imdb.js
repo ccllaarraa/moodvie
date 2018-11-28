@@ -8,9 +8,9 @@ const movieString = fs.readFileSync('./database/movies.json');
 const movies = JSON.parse(movieString);
 
 //Movie Genres 0 = SAD , 1 = HAPPY , 2 = NEUTRAL
-let sad = ['----sad-movies----'];
-let happy = ['----happy-movies----'];
-let neutral = ['----neutral-movies----'];
+let sad = [];
+let happy = [];
+let neutral = [];
 let matches = [];
 
 /* --------- DATABASE METHODS --------- */
@@ -43,9 +43,9 @@ const randomMovie = (emotion) =>{
   if(emotion === '0'){
     return  sad[Math.floor(Math.random() * sad.length)];
   } else if( emotion === '1'){
-    return happy[Math.floor(Math.random() * happy.length)];
+    return neutral[Math.floor(Math.random() * happy.length)];
   } else if ( emotion === '2'){
-    return neutral[Math.floor(Math.random() * neutral.length)];
+    return happy[Math.floor(Math.random() * neutral.length)];
   }
 }
 
