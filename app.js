@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-//
+
 app.post('/', (req, res) => {
   const emotion = req.body.emotion;
   // // console.log(emotion);

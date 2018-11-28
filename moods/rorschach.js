@@ -1,9 +1,7 @@
-exports.rorschach = function () {
-    let rorschachInput = process.argv[3]  
-
-    if(rorschachInput == 'img1') {
+exports.rorschach = function (rorschach) {
+    if(rorschach === '0') {
         return 0
-    } else if(rorschachInput == 'img2') {
+    } else if(rorschach === '1') {
         return 1
     } else {
         return 2
