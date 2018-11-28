@@ -28,11 +28,17 @@ app.get('/', (req, res) => {
 
 //
 app.post('/', (req, res) => {
-  const emotion = req.body.emotion;
-  // console.log(emotion);
-  const response = movies.database.randomMovie(emotion);
-  //res.send({ movies: response});
-  res.render('results', {movies: response});
+  // //const emotion = req.body.emotion;
+  // const colorInput 
+  // // console.log(emotion);
+
+  let list = []
+  let movie1 = movies.database.randomMovie(emotion);
+  let movie2 = movies.database.randomMovie(emotion);
+  list[0] = movie1;
+  list[1] = movie2;
+
+  res.render('results', {movies: list});
 })
 
 app.get('/results', (req, res) => {

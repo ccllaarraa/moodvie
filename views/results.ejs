@@ -7,45 +7,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="results.css" />
 
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
-
-<!-- <% if (movies) { %>
-<img src="<%= movies.poster %>" alt="">
-<h1><%= movies.title %></h1>
-<% } %> -->
+  <div class="container">
+    <h2 class="plot">Moodvie.</h2>
+    <% movies.forEach(function(movie){ %>
   <div class="row">
-    <div class="box">
-      <div class="image">
-        <span><img src="<%= movies.poster %>" alt=""></span>
-        <span></span>
-        <span></span>
-        <span></span>
+  
+      <div class="col l4 s12">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="<%= movie.poster %>">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4 plot">
+              <%= movie.rating %><i class="material-icons star">
+                grade
+              </i><i class="material-icons right">more_vert</i></span>
+            <p class="director">Director: <%= movie.director %></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4 card-back">
+              <i class="material-icons right">close</i></span>
+            <div>
+              <span><i class="fas fa-tv fa-3x"></i></span>
+              <p class="partners">You can watch this movie via our partners below...</p>
+              
+                <a class="card-link" href="http://netflix.com">Netflix</a>
+              
+                <a class="card-link" href="https://www.amazon.com/Prime-Video/b?ie=UTF8&node=2676882011">Amazon Prime</a>
+              
+                <a class="card-link" href="https://www.hbo.com/movies/catalog">HBO Movies</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="content">
-        <div>
-          <h3>
-            <%= movies.title %>
-          </h3>
-          <p>Year:
-            <%= movies.year %>
-          </p>
-          <p>IMDB Rating:
-            <%= movies.rating %>
-          </p>
+      <div class="col l8 s12">
+        <h3 class="plot">Plot.</h3>
+        <hr>
+        <p>
+          <%= movie.plot %>
+        </p>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Moodvie.</h5>
+          <p class="grey-text text-lighten-4">We only reccomend the best movies backed by ratings from IMDB AND Metacritic.</p>
+          <img class="logo" src="../imdb.jpg" alt="">
+          <img class="logo"src="../metacritic.png" alt="">
+          <img class="logo"src="../rotten-t.gif" alt="">
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Contact us.</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">info@moodvie.com</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="movieInfo">
-      <h3>Plot.</h3>
-      <p ><%= movies.plot %></p>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Moodvie
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
     </div>
-  </div>
+  </footer>
   
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
