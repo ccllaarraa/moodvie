@@ -28,8 +28,7 @@ app.get('/', (req, res) => {
 
 //
 app.post('/', (req, res) => {
-  // //const emotion = req.body.emotion;
-  // const colorInput 
+  const emotion = req.body.emotion;
   // // console.log(emotion);
 
   let list = []
