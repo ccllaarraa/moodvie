@@ -13,14 +13,15 @@ color: black;
 }
 
 .titles {
-  font-family: Akkurat Pro;
-  font-size: 24px;
-  color: #daa520;
-    top: auto;
-    margin: 10px;
-    font-weight: 400;
- position: absolute;
-    float: right;
+color:#daa520;
+ font-size:28px;
+ font-family: Akkurat Pro;
+
+ position: relative;
+ 
+ left:20px;
+ top: -9px;
+ 
 
 }
 /*landing page*/
@@ -186,8 +187,8 @@ color: black;
 
 /* LABEL ======================================= */
 label                  {
- color:#e0e0dd;;
- font-size:26px;
+ color:#daa520;
+ font-size:28px;
  font-family: Akkurat Pro;
 
  position:absolute;
@@ -410,7 +411,8 @@ display: flex;
 .R{
   display: flex;
   flex-wrap: wrap;
- justify-content: center; 
+ justify-content: center;
+ margin: 15px; 
 }
 
 .reframe {
@@ -502,6 +504,7 @@ animation: pop 6s linear infinite;
   width: 100px;
   position: absolute;
   justify-content: center;
+  padding-top: 400px;
 }
 
  
