@@ -30,13 +30,13 @@ app.set('view engine', 'ejs');
 
 //serve home page
 app.get('/', (req, res) => {
-  res.render('index', {weatherResult: false});
+  res.render('index');
 });
 
-//serve home page
-app.get('/main', (req, res) => {
-  res.render('main', {weatherResult: false});
-});
+// //serve home page
+// app.get('/main', (req, res) => {
+//   res.render('main', {weatherResult: false});
+// });
 
 /*------------ RESULT REQUEST ------------*/
 app.post('/results', (req, res) => {
