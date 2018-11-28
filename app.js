@@ -19,7 +19,8 @@ const app = express();
 const port = 3000;
 
 //load static files
-app.use(express.static('public'))
+app.use('/public', express.static('public'))
+
 
 //set up body parser
 app.use(express.urlencoded({ extended: false }));
@@ -32,6 +33,10 @@ app.get('/', (req, res) => {
   res.render('index', {weatherResult: false});
 });
 
+//serve home page
+app.get('/main', (req, res) => {
+  res.render('main', {weatherResult: false});
+});
 
 /*------------ RESULT REQUEST ------------*/
 app.post('/results', (req, res) => {
