@@ -6,9 +6,9 @@
 // app.use(express.static(__dirname + '/views')); //include css
 // app.use(bodyParser.urlencoded({ extended: false }))
 const request = require('request');
-const weatherFunctions = require('./weather.js')
-const colorFunctions = require('./color.js')
-const rorschachFunctions = require('./rorschach.js')
+const weatherFunctions = require('./moods/weather.js')
+const colorFunctions = require('.//moods/color.js')
+const rorschachFunctions = require('./moods/rorschach.js')
 
 // app.get('/', (req, res) => {
 //     res.render('index')
