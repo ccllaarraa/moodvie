@@ -13,6 +13,11 @@
     opacity: 1;
     transform: translate(0); } }
 
+@font-face {
+ font-family: myDrukWide;
+ src: url(/public/style/Druk_Wide_Bold_2.otf);
+}
+
 
 body {
   margin: 0;
@@ -58,7 +63,7 @@ h3 , p{
 }
 
 .plot {
-  color: #fff;
+  color: #daa520;
   font-family: 'Monoton', cursive;
   animation: moveInLeft 1.5s ease-out;
 }
@@ -92,6 +97,11 @@ footer {
 
 .page-footer {
   background-color: #000000b0 !important;
+}
+
+.results__title {
+  font-family: myDrukWide;
+  color: #daa520
 }
 
 
