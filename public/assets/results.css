@@ -78,11 +78,12 @@ h3 , p{
   border-radius: 1rem;
   margin-bottom: .5rem;
   padding: 1rem;
-  transition: all 5s;
+  transition: all .5s;
   color: #fff;
 }
 .card-link:hover {
-  color: rgb(34, 51, 32);
+
+  background-color: #daa520;
 }
 
 /*** FOOTER STYLES ***/
@@ -104,6 +105,19 @@ footer {
   color: #daa520
 }
 
+.actors {
+  font-family: myDrukWide;
+  color: #daa520;
+  letter-spacing: .3rem;
+}
+
+.activator {
+  cursor: pointer;
+}
+
+.contact-list a {
+  margin-left: .5rem;
+}
 
 
 

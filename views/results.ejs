@@ -34,10 +34,10 @@
             <img class="activator" src="<%= movie.poster %>">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4 plot">
+            <span class="card-title grey-text text-darken-4 plot">
               <%= movie.rating %><i class="material-icons star">
                 grade
-              </i><i class="material-icons right">more_vert</i></span>
+              </i></span><i class="material-icons right activator">more_vert</i>
             <p class="director">Director: <%= movie.director %></p>
           </div>
           <div class="card-reveal">
@@ -59,9 +59,12 @@
       <div class="col l8 s12">
         <h3 class="plot">Plot.</h3>
         <hr>
+        <span class="actors">Actors:
+          <%= movie.actors %></span>
         <p>
           <%= movie.plot %>
         </p>
+        
       </div>
     </div>
     <% }); %>
@@ -72,15 +75,17 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Moodv.</h5>
-          <p class="grey-text text-lighten-4">We only reccomend the best movies backed by ratings from IMDB AND Metacritic.</p>
+          <p class="grey-text text-lighten-4">We only reccomend the best movies backed by ratings from IMDB , Rotten Tomatoes and Metacritic.</p>
           <img class="logo" src="../public/images/imdb.jpg" alt="">
           <img class="logo"src="../public/images/metacritic.png" alt="">
           <img class="logo"src="../public/images/rotten-t.gif" alt="">
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Contact us.</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">info@moodvie.com</a></li>
+          <ul class="contact-list">
+            <li><i class="far fa-envelope"></i><a class="grey-text text-lighten-3" href="#!">info@moodv.com</a></li>
+            <li><i class="fab fa-instagram"></i><a class="grey-text text-lighten-3" href="http://www.instagram.com">Instagram</a></li>
+            <li><i class="fab fa-twitter"></i><a class="grey-text text-lighten-3" href="http://www.twitter.com">Twitter</a></li>
           </ul>
         </div>
       </div>
