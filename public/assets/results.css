@@ -1,0 +1,123 @@
+/*** Animations ***/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30rem); }
+  20% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  70% {
+    color: rgb(216, 152, 14);;
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@font-face {
+ font-family: myDrukWide;
+ src: url(/public/style/Druk_Wide_Bold_2.otf);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(7, 7, 7, 0.842), rgb(26, 16, 16));
+  font-size: 16px;
+
+  opacity: 1;
+  transition: 3s opacity;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+h3 , p{
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.row {
+  margin-top: 4rem;
+}
+
+.card {
+  border: 2px solid #fff;
+  border-radius: 1rem;
+}
+
+.star {
+  color: rgb(216, 152, 14);
+}
+
+.director {
+  color: rgb(22, 99, 99);
+  font-size: .8rem;
+}
+
+.col {
+  margin-left: 8rem;
+}
+
+.plot {
+  color: #daa520;
+  font-family: 'Monoton', cursive;
+  animation: moveInLeft 1.5s ease-out;
+}
+
+.partners {
+  color: #000;
+}
+
+.card-link {
+  display: inline-block;
+  background: #000;
+  border-radius: 1rem;
+  margin-bottom: .5rem;
+  padding: 1rem;
+  transition: all .5s;
+  color: #fff;
+}
+.card-link:hover {
+
+  background-color: #daa520;
+}
+
+/*** FOOTER STYLES ***/
+
+footer {
+  font-family: 'Akkurat Pro;', sans-serif;
+}
+.logo {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.page-footer {
+  background-color: #000000b0 !important;
+}
+
+.results__title {
+  font-family: myDrukWide;
+  color: #daa520
+}
+
+.actors {
+  font-family: Akkurat Pro;
+  color: #daa520;
+  letter-spacing: .3rem;
+}
+
+.activator {
+  cursor: pointer;
+}
+
+.contact-list a {
+  margin-left: .5rem;
+}
+
+
+

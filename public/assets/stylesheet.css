@@ -1,0 +1,344 @@
+
+
+html {
+  margin: 0;
+}
+
+.heading-one {
+  font-size: 180px;
+  color: #daa520;
+  animation: tutsFade 4s, fontAlternate 15s infinite;
+  top: 10%;
+}
+
+@keyframes tutsFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+}
+
+@font-face {
+    font-family: myBlazed;
+    src: url(/public/style/Blazed.ttf);    
+}
+
+@font-face {
+  font-family: myDrukWide;
+  src: url(/public/style/Druk_Wide_Bold_2.otf);
+}
+
+@keyframes fontAlternate {
+    0% {font-family: 'Arbutus', cursive;} 
+    10% {font-family: 'Srisakdi', cursive;}
+    20% {font-family: 'Faster One', cursive;}
+    30% {font-family: myDrukWide;}
+    40% {font-family: 'Raleway Dots', cursive;}
+    50%  {font-family: 'Limelight', cursive;} 
+    60% {font-family: 'Oleo Script', cursive;}
+    70% {font-family: 'Spirax', cursive;}
+    80% {font-family: 'Nosifer', cursive;}
+    90% {font-family: 'Monoton', cursive;}
+    100% {font-family: 'Press Start 2P', cursive;}
+          
+}
+
+@keyframes fontAlternateLogo {
+    0% {font-family: Boulevard; }
+    20% {font-family: Blazed;}
+    60% {font-family: Druk Wide; }
+    80% {font-family: SFMimic-Smile;}
+    100% {font-family: Akkurat Pro;}
+}
+
+
+/* LANDINGPAGE SUBTITLE */
+
+.heading-two{
+  font-family: Akkurat Pro;
+  font-size: 30px;
+  color: #daa520;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  top: 60%;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  background-color: rgb(49, 49, 48);
+  position: relative;
+}
+
+
+/* INPUT FORM CITY */
+
+.city-heading{
+  font-family: Akkurat Pro;
+  font-size: 30px;
+  color: #daa520;
+  font-weight: 400;
+
+}
+
+/* COLOUR DIVISION */
+
+.container-flex-row{
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container-flex-row label{
+  width:30%;
+  height:280px;
+}
+
+[type=radio] {
+ position: absolute;
+ opacity: 0;
+ width: 0;
+ height: 0;
+}
+/* IMAGE STYLES */
+[type=radio] + img {
+ cursor: pointer;
+}
+
+/* INPUT FOR CITY*/
+
+.city-input{
+  width: 30%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: none;
+  background-color: rgb(49, 49, 48);
+  border-bottom: 2px solid #d5a436;
+  font-family: Akkurat Pro;
+  font-size: x-large;
+  color: #9E9E9E;
+  text-align: center;
+ }
+
+ .city-input:hover{
+   opacity: 0.3;
+ }
+
+ .city-input-button{
+   width: 20px;
+   font-family: Akkurat Pro;
+   font-size: x-large;
+   color: #9E9E9E;
+   text-align: center;
+
+ }
+ 
+
+/* CITY ANIMATION OUTLINE SV */
+img{
+  width: 100%;
+  
+}
+
+
+/* POPCORN IMG AT END */
+
+#popcorn{
+  width:100px;
+}
+
+#popcorn:hover{
+  cursor: pointer;
+  width:130px;
+}
+
+button{
+  background: transparent;
+  border: none;
+}
+
+
+.rorschach-container{
+  min-height: 100vh;
+  
+}
+
+.container-flex-row{
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color:black;
+  width:30%
+}
+
+.image{
+  background-color:black;
+  width:30%;
+  height: 260px;
+ 
+}
+
+@keyframes pop{
+ 50%  {transform: scale(0.9);}
+ }
+#reframe1 {
+animation: pop 8s linear infinite;
+}
+#reframe2{
+animation: pop 10s ease infinite;
+}
+#reframe3 {
+animation: pop 10s ease-in-out infinite;
+}
+#reframe4 {
+animation: pop 9s ease-out infinite;
+}
+#reframe5 {
+animation: pop 6s linear infinite;
+}
+#reframe6 {
+  animation: pop 8s linear infinite;
+}
+
+
+
+/* CITY DRAWING SVG */
+
+
+ 
+  .st0 {
+    top: 300px;
+    stroke: #daa520;
+    stroke-width: 2;
+    stroke-dasharray: 5000px;
+    stroke-dashoffset: 5000px; 
+    animation: draw 8s  forwards 1 linear  ;  
+    animation-delay: 2s;
+  }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* COLOUR BLOCKS */
+.purple, .pink, .brown, .blue, .yellow, .green {
+ cursor: pointer;
+
+ /* ROUNDED CORNERS */
+ border-radius: 60px;
+}
+.purple:hover, .brown:hover, .pink:hover, .yellow:hover, .green:hover, .blue:hover {
+ animation: pop 0.6s linear 1;
+}
+@keyframes pop{
+ 50%  {transform: scale(1.1);}
+}
+
+.purple{
+ background-color: #5b376b;
+ }
+.brown{
+ background-color:  #4A412A;
+}
+.pink{
+ background-color:  #e7adbe;
+}
+.yellow{
+ background-color:  #ffe130;
+}
+
+.green{
+ background-color:  #aed5c0;
+}
+.blue{
+ background-color:  #438dea;
+ }
+/* end colour division */
+
+
+ 
+
+/* BEFORE PAGE LOADS SHOW POP-CORN SIGN */
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; } 
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	background: url("../images/popcorn.png") center no-repeat rgb(49, 49, 48);
+}
+ 
+
+
+/*ARROW*/
+
+
+i {
+  
+  color: #daa520;
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  position: relative;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
