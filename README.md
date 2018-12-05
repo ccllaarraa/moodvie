@@ -1,9 +1,8 @@
-# MOODVIE ##
+# MOODV. ##
 
-This application will help users pick a movie based on their mood.
+An application that uses three metrics to determine your mood and recommends two top-rated IMDB films based on the result.
 
-By asking a number of questions we will try to determine their mood and give them a reccomendation.
-
+We use a weather forecasting API (DarkSky), a Rorschach psychological test and a users colour preference to determine their mood.
 ---
 
 **IMDB API**
